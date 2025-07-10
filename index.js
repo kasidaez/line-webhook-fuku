@@ -23,7 +23,6 @@ function handleEvent(event) {
   if (event.type !== 'message') return Promise.resolve(null);
 
   const userId = event.source.userId;
-  cconst now = new Date();
 const now = new Date();
 const hour = (now.getUTCHours() + 7) % 24;
 const isNight = hour >= 21 || hour < 7;
