@@ -24,8 +24,10 @@ function handleEvent(event) {
 
   const userId = event.source.userId;
   cconst now = new Date();
-const hour = (now.getUTCHours() + 7) % 24; 
+const now = new Date();
+const hour = (now.getUTCHours() + 7) % 24;
 const isNight = hour >= 21 || hour < 7;
+
 
 
   if (event.message.type === 'image') {
