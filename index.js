@@ -23,9 +23,10 @@ function handleEvent(event) {
   if (event.type !== 'message') return Promise.resolve(null);
 
   const userId = event.source.userId;
-  const now = new Date();
-  const hour = now.getHours();
-  const isNight = hour >= 21 || hour < 7;
+  cconst now = new Date();
+const hour = (now.getUTCHours() + 7) % 24; 
+const isNight = hour >= 21 || hour < 7;
+
 
   if (event.message.type === 'image') {
     return client.replyMessage(event.replyToken, {
